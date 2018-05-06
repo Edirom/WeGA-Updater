@@ -6,7 +6,7 @@
     "response-message": "updating WeGA-db",
     "pass-arguments-to-command":
     [{
-        "source": "payload",
+        "source": "url",
         "name": "rev"
     }]
   }
