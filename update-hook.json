@@ -1,0 +1,8 @@
+[
+  {
+    "id": "wega-update",
+    "execute-command": "/var/wega-data/scripts/docker-update.sh",
+    "command-working-directory": "/var/opt/wega-updater",
+    "response-message": "updating WeGA-db"
+  }
+]
