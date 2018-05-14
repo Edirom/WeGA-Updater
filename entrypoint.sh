@@ -9,7 +9,12 @@ fi
 # write parameters to local.build.properties
 # from Docker env variables 
 awk -v data_dir="${WEGA_DATA_DIR}" 'END { for (name in ENVIRON) {
-        if (name ~ /^UPDATER_/) print substr(name, 9)"="ENVIRON[name] >> (data_dir"/local.build.properties") ;
+        fixedStr = name
+        # need to replace underscores with dots because
+        # bash variables are not allowed to take dots
+        # but our ANT script variables are full of dots …
+        gsub(/_/, ".", fixedStr)
+        if (name ~ /^UPDATER_/) print substr(fixedStr, 9)"="ENVIRON[name] >> (data_dir"/local.build.properties") ;
     }
 } ' < /dev/null
 
