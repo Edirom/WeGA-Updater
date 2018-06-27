@@ -1,6 +1,6 @@
 # First grab the exist jars from the current 
 # eXist-db which we are using
-FROM stadlerpeter/existdb as exist-jars
+FROM stadlerpeter/existdb:3.3.0 as exist-jars
 
 # then download the base image
 FROM almir/webhook
